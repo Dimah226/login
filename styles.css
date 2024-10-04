@@ -29,24 +29,12 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 /* Default (Dark Theme) */
-:root.dark {
+:root {
     --first-color: #070E2A;  /* Dark background */
     --second-color: #AC72A1; /* Dark accent */
     --third-color: #FBD9FA;  /* Light text */
 }
 
-/* Light Theme */
-:root.light {
-    --first-color: #FFFFFF;  /* Light background */
-    --second-color: #F5F5F5; /* Light accent */
-    --third-color: #070E2A;  /* Dark text */
-}
-
-:root {
-    --first-color: #AC72A1;
-    --second-color: #FBD9FA;
-    --third-color: #070E2A;
-}
 
 body {
     background: linear-gradient(45deg, var(--first-color), var(--second-color), var(--third-color));
@@ -136,9 +124,7 @@ body {
     justify-content: center;
     align-items: center;
 }
-.prenom{
-    
-}
+
 input {
     color: var(--first-color);
     padding: 0 1rem;
@@ -264,12 +250,6 @@ input:hover{
     }
 }
 
-/* Landscape Orientation */
-@media (orientation: landscape) {
-    body {
-        background-color: lightgreen; /* Change background color in landscape */
-    }
-}
 
 
 
