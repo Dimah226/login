@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./java.js" defer></script>
+    <title>RAHAH Forms</title>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="information">
+                <div class="i-fond">
+                    <img src="./Images/Image.webp" class="image" alt="Image descriptive">
+                </div>
+                
+                <form action="" method="post" class="formulaire">
+                    <!-- Prénom (First Name) -->
+                    <div class="prenom entry-area">
+                        <input id="prenom" class="prenoms" type="text" name="prenom" placeholder=" " autocomplete="given-name" required>
+                        <div class="label-line">Entrez vos prénom(s)</div>
+                    </div>
+                    
+                    <!-- Nom (Last Name) -->
+                    <div class="nom entry-area">
+                        <input id="noms" type="text" name="nom" autocomplete="family-name" placeholder=" " required>
+                        <div class="label-line">Entrez vos nom(s)</div>
+                    </div>
+                    
+                    <!-- Email -->
+                    <div class="emails entry-area">
+                        <input type="email" placeholder=" " name="email" autocomplete="email" id="email" required>
+                        <label for="email" class="label-line">Entrez votre adresse mail</label>
+                    </div>
+                    
+                    <!-- Phone Number -->
+                    <div class="phone entry-area">
+                        <input type="tel" placeholder=" " id="phone-number" name="phone-number" autocomplete="tel" required>
+                        <label for="phone-number" class="label-line">Entrez votre contact</label>
+                    </div>
+                    
+                    <!-- Password -->
+                    <div class="password entry-area">
+                        <input id="passwords" placeholder=" " type="password" name="password" autocomplete="new-password" required>
+                        <label for="passwords" class="label-line">Entrez un mot de passe</label>
+                    </div>
+                    
+                    <!-- Confirm Password -->
+                    <div class="confirm-password entry-area">
+                        <input type="password" placeholder=" " name="confirm-password" autocomplete="new-password" id="confirm-passwords" required>
+                        <label for="confirm-passwords" class="label-line">Confirmez le mot de passe</label>
+                    </div>
+                    
+                </form>
+            </div>
+            <div>
+                <button type="submit" class="boutton">Soumettre</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

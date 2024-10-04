@@ -1,0 +1,324 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+#root, #__next {
+    isolation: isolate;
+}
+
+/* Default (Dark Theme) */
+:root.dark {
+    --first-color: #070E2A;  /* Dark background */
+    --second-color: #AC72A1; /* Dark accent */
+    --third-color: #FBD9FA;  /* Light text */
+}
+
+/* Light Theme */
+:root.light {
+    --first-color: #FFFFFF;  /* Light background */
+    --second-color: #F5F5F5; /* Light accent */
+    --third-color: #070E2A;  /* Dark text */
+}
+
+:root {
+    --first-color: #AC72A1;
+    --second-color: #FBD9FA;
+    --third-color: #070E2A;
+}
+
+body {
+    background: linear-gradient(45deg, var(--first-color), var(--second-color), var(--third-color));
+    height: 100vh;
+    width: 100vw; /* Corrected to vw */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0; /* Remove default margin */
+}
+
+.container {
+    width: 90%; /* Use a percentage for responsiveness */
+    height: 50%;
+    max-width: 90rem; /* Limit the maximum width */
+    max-height: 70rem;
+    background: linear-gradient(240deg, var(--first-color), var(--second-color), var(--third-color));
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Example shadow */
+    padding: 2rem; /* Added padding for inner spacing */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    display: flex;
+    width: 99%;
+    height: 99%;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.i-fond {
+    position: absolute; /* Changed to relative for better positioning */
+    background-color: #070E2A;
+    background-image: url(./Images/NOISE.webp);
+    border-radius: 1rem;
+    width: 40%; /* Changed to 100% for full width */
+    height: 80%; /* Utiliser des unités vh pour la hauteur */
+    padding: 20px;
+    max-width: 25rem;
+    display: flex; /* Utiliser flex pour centrer les images ou le contenu à l'intérieur */
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement */
+    z-index: 1111;
+    left: 0%;
+}
+
+.image {
+    width: 100%; /* Use width 100% to fit the container */
+    height: 120%; /* Maintain aspect ratio */
+    margin-bottom: 60%;
+    object-fit: cover; /* Cacher les parties non visibles tout en gardant l'aspect */
+}
+
+.information {
+    position: relative;
+    display: flex;
+    width: 99%;
+    height: 80%;
+    justify-content: flex-end;
+    align-items: center;
+    max-width: 60rem;
+}
+
+.formulaire {
+    height: 70%;
+    width: 80%;
+    background-color: var(--third-color);
+    border-radius: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    box-shadow: 10px 10px 100px rgba(18, 62, 239, 0.5);
+}
+
+.entry-area {
+    position: relative;
+    width: 75%;
+    height: 20%;
+    justify-self: end;
+    align-self: self-end;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.prenom{
+    
+}
+input {
+    color: var(--first-color);
+    padding: 0 1rem;
+    width: 90%;
+    outline: none;
+    border-radius: 1rem;
+    height: 70%;
+    border: 2px solid var(--first-color);
+    background-color: transparent;
+    transition: 0.1s ease;
+    z-index: 1111;
+    
+    cursor: pointer;
+}
+
+.label-line {
+    position: absolute;
+    color: var(--first-color);
+    background-color: var(--third-color);
+    transition: 0.2s ease;
+}
+
+input:focus {
+    color: var(--first-color);
+    border: 4px solid green;
+}
+
+input:invalid:not(:placeholder-shown) {
+    color: var(--first-color);
+    border: 4px solid red;
+}
+
+input:focus+.label-line,
+input:valid:not(:placeholder-shown)+.label-line{
+    padding: 0.3rem;
+    height: 10px; /* Modifie la hauteur du label */
+    line-height: 15px; /* Ajuste la hauteur de ligne pour un meilleur alignement */
+    transform: translate(-8rem, -1.4rem) scale(0.88); /* Applique une transformation pour l'effet de "flottement" */
+    z-index: 1111; /* S'assure que le label est visible au-dessus des autres éléments */
+
+}
+
+
+input:focus:valid {
+    color: var(--first-color);
+    border: 4px solid green;
+}
+
+input:hover{
+    transform: scale(1.05);
+}
+
+
+/* Media Queries for Responsive Design */
+@media (max-width: 480px) {
+    .container {
+        width: 95%; /* Make the container almost full-width */
+        height: 80%;
+        padding: 0.5rem; /* Further reduce padding */
+    }
+    .information{
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .i-fond{
+        height: 35%;
+        top: 0;
+        width: 70%;
+        left: 15%;
+    }
+
+    .image{
+        margin-bottom: 30%;
+    }
+    
+    .formulaire{
+        padding-top: 3rem;
+    }
+
+    .entry-area{
+        justify-self: center;
+        align-self: center;
+    }
+
+    .boutton{
+        margin-top: 1rem;
+    }
+
+    input:focus+.label-line,
+    input:valid:not(:placeholder-shown)+.label-line{
+        padding: 0.2rem;
+        height: 10px; /* Modifie la hauteur du label */
+        line-height: 15px; /* Ajuste la hauteur de ligne pour un meilleur alignement */
+        transform: translate(-0.8rem, -1.2rem) scale(0.88); /* Applique une transformation pour l'effet de "flottement" */
+        z-index: 1111; /* S'assure que le label est visible au-dessus des autres éléments */
+        box-shadow: 0.5rem 0.5rem 0.5rem var(--third-color);
+
+}
+}
+
+/* For Tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+    body {
+        font-size: 15px;
+    }
+    .container {
+        padding: 1rem; /* Reduce padding for smaller screens */
+    }
+}
+
+/* For Small Laptops */
+@media (min-width: 769px) and (max-width: 1024px) {
+    body {
+        font-size: 16px;
+    }
+}
+
+/* For Large Screens (Desktops) */
+@media (min-width: 1025px) {
+    body {
+        font-size: 18px;
+    }
+}
+
+/* Landscape Orientation */
+@media (orientation: landscape) {
+    body {
+        background-color: lightgreen; /* Change background color in landscape */
+    }
+}
+
+
+
+.boutton {
+    align-items: center;
+    appearance: none;
+    background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+    border: 0;
+    border-radius: 6px;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+                rgba(45, 35, 66, 0.3) 0 7px 13px -3px,
+                rgba(58, 65, 111, 0.5) 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "JetBrains Mono", monospace;
+    height: 48px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow 0.15s, transform 0.15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow, transform;
+    font-size: 18px;
+  }
+  
+  /* Ajoutez un état de survol pour améliorer l'interaction */
+  .boutton:hover {
+    box-shadow: rgba(45, 35, 66, 0.5) 0 4px 8px, 
+                rgba(45, 35, 66, 0.4) 0 10px 15px -5px, 
+                rgba(58, 65, 111, 0.6) 0 -4px 0 inset;
+    transform: translateY(-2px);
+  }
+  
+  /* Ajoutez un état actif pour un retour visuel lors du clic */
+  .boutton:active {
+    transform: translateY(0); /* Réinitialise l'effet de translation */
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, 
+                rgba(45, 35, 66, 0.3) 0 7px 13px -3px, 
+                rgba(58, 65, 111, 0.5) 0 -3px 0 inset; /* Restauration de l'ombre */
+  }
+  
